@@ -1,0 +1,203 @@
+/* Reset some basic elements */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: black;
+    font-weight: bold;
+    background-image: url('back.webp');
+    background-size: cover;
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    /* background-color: #1e1e1e; */
+    background-color: rgba(137, 137, 137, 0.5); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    color: black;
+    font-weight: bold;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.content-container {
+    padding: 20px;
+    border-radius: 8px;
+    background-color:rgba(137, 137, 137, 0.5);
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#hero {
+   
+    background-size: cover;
+    background-attachment: fixed;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.parallax {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Spacing between image and text */
+    flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+}
+
+.hero-img {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Maintain aspect ratio for circle */
+    border-radius: 50%; /* Circular shape */
+    overflow: hidden; /* Ensures the image doesn't overflow its boundary */
+    perspective: 1000px; /* For 3D flip effect */
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Ensures the image itself is circular */
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d; /* Allows 3D transformations */
+    cursor: pointer;
+}
+
+.hero-img:hover img {
+    transform: rotateY(-180deg); /* Flips the image from right to left */
+}
+
+.hero-text {
+    text-align: center; /* Centers the text, useful for when it stacks above/below the image on smaller screens */
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-text h1, .hero-text p {
+        margin: 10px 0; /* Adds some spacing around the text when stacked */
+    }
+}
+
+
+footer {
+    background-color: rgba(137, 137, 137, 0.5);
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-links li {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* thoots */
+.photo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 01px 0px 25px 0px;
+    
+    color: black;
+    /* font-weight: bold; */
+}
+
+.photo-item {
+    text-align: center;
+    transition: transform 0.5s ease;
+    margin: 30px;
+    cursor: pointer;
+   
+}
+
+.photo-item img {
+    width: 100px; /* Control the size of the images here */
+    height: 100px; /* Ensure the image is a perfect circle */
+    border-radius: 45%; /* Makes the image circular */
+    transition: transform 0.5s ease;
+    
+}
+
+.photo-item:hover img {
+    transform: scale(1.1) rotate(360deg); /* Enlarges and rotates the image on hover */
+}
+
+.photo-item p {
+    margin-top: 10px; 
+}
+
+@media (max-width: 600px) { /* Adjust this breakpoint as needed */
+    .photo-container {
+        flex-direction: column;
+        align-items: center;
+    
+    }
+    .photo-item img {
+       margin: 10px;
+    }
+    .photo-item p {
+        margin: 10px;
+    }
+}
+
+
+/* Apply a minimum height to the entire body and display it as a flex container */
+/* This height ensures that the content and footer together at least fill the viewport */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+/* The .content-wrap contains all content except the footer */
+/* It grows to fill the vertical space, pushing the footer to the bottom */
+.content-wrap {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make the footer stick to the bottom */
+.footer {
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+}
+
+/* Ensure the body is a flex container, with the content directed column-wise */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
